@@ -13,17 +13,22 @@ class Game:
     def run(self):
         while self.running:
             self.clear_screen()
+            self.render()
             self.handle_input()
             self.update()
-            self.render()
-            time.sleep(0.05)
 
     def clear_screen(self):
         sys.stdout.write('\033[2J\033[H')
         sys.stdout.flush()
 
     def handle_input(self):
-        pass
+        command = input("Enter command: (w/a/s/d/talk/quit): ")
+        if command in ['w', 'a', 's', 'd']:
+            print("not implemented yet")
+        elif command == 'talk':
+            print("not implemented yet")
+        elif command == 'quit':
+            self.running = False
 
     def update(self):
         pass
