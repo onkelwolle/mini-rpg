@@ -41,6 +41,6 @@ class Game:
         pygame.display.flip()
 
     def update(self):
-        self.player.update()
+        self.player.update(self.map)
         for npc in self.npcs:
             npc.update()

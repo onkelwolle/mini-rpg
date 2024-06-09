@@ -27,9 +27,10 @@ class Player:
         elif key in (pygame.K_a, pygame.K_d):
             self.dx = 0
 
-    def update(self):
-        self.rect.x += self.dx
-        self.rect.y += self.dy
+    def update(self, map):
+        if(map.is_passable(self.rect.x + self.dx, self.rect.y + self.dy)):
+            self.rect.x += self.dx
+            self.rect.y += self.dy
 
     def draw(self, screen):
         screen.blit(self.image, self.rect.topleft)
