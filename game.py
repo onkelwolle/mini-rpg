@@ -1,5 +1,6 @@
 import pygame
 from player import Player
+from npc import Npc
 
 class Game:
     def __init__(self):
@@ -8,7 +9,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
         self.player = Player(100, 100)
-
+        self.npcs = [Npc(150, 150)]
 
     def run(self):
         while self.running:
@@ -29,7 +30,11 @@ class Game:
     def render(self):
         self.screen.fill("black")
         self.player.draw(self.screen)
+        for npc in self.npcs:
+            npc.draw(self.screen)
         pygame.display.flip()
 
     def update(self):
         self.player.update()
+        for npc in self.npcs:
+            npc.update()
