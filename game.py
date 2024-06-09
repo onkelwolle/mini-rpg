@@ -1,4 +1,3 @@
-import sys
 import pygame
 
 class Game:
@@ -10,11 +9,19 @@ class Game:
     
     def run(self):
         while self.running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    self.running = False
-
-            self.screen.fill("purple")
-            pygame.display.flip()
+            self.handle_events()
+            self.update()
+            self.render()
             self.clock.tick(60)
 
+    def handle_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+
+    def render(self):
+        self.screen.fill("black")
+        pygame.display.flip()
+
+    def update(self):
+        pass
