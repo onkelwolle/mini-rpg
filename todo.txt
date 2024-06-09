@@ -1,0 +1,16 @@
+# Player Class
+- fix Player moving out of bounds
+
+# NPC Class
+- create NPC Class
+- create NPCs
+- implement behavior of NPC, maybe a simple interaction via UI printing out text
+
+# Map
+- create Map Class to represent Walls
+- implement collision so the player can't move through walls
+
+# UI
+- create UI Class to represent and draw an UI
+- should be able to display simple text
+
