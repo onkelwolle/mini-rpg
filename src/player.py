@@ -32,9 +32,13 @@ class Player:
             self.dx = 0
 
     def update(self, map):
-        if(map.is_passable(self.rect.x + self.dx, self.rect.y + self.dy)):
-            self.rect.x += self.dx
-            self.rect.y += self.dy
+        new_x = self.rect.x + self.dx
+        new_y = self.rect.y + self.dy
+
+        new_rect = pygame.Rect(new_x, new_y, self.width, self.height)
+
+        if(map.is_passable(new_rect)):
+            self.rect = new_rect
 
     def draw(self, screen):
         screen.blit(self.image, self.rect.topleft)
