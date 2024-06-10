@@ -11,8 +11,8 @@ class Game:
         self.clock = pygame.time.Clock()
         self.running = True
         self.map = Map()
-        self.player = Player(100, 100)
-        self.npcs = [Npc(150, 150)]
+        self.player = Player(64, 64)
+        self.npcs = [Npc(128, 128)]
         self.ui = Ui()
 
     def run(self):
@@ -41,6 +41,7 @@ class Game:
         pygame.display.flip()
 
     def update(self):
+        self.map.update(self.player, self.npcs)
         self.player.update(self.map)
         for npc in self.npcs:
             npc.update()
