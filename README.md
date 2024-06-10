@@ -3,7 +3,7 @@
 Setup venv: 
 ```
 python3 -m venv env
-sourcce env/bin/activate
+source env/bin/activate
 ```
 
 Setup dependencies:
