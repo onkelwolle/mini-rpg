@@ -5,13 +5,14 @@
 # NPC Class
 - DONE create NPC Class
 - DONE create NPCs
-- implement behavior of NPC, maybe a simple interaction via UI printing out text
+- DONE implement behavior of NPC, maybe a simple interaction via UI printing out text
 
 # Map
 - DONE create Map Class to represent Walls
 - DONE implement collision so the player can't move through walls
 - add doors to another Map
-- add some kind of tracking where npcs and players are on the map
+- DONE add some kind of tracking where npcs and players are on the map
+- generally not happy with the map implementation, maybe rebuild the map with a tool like tiled
 
 # UI
 - create UI Class to represent and draw an UI
