@@ -2,9 +2,12 @@ import pygame
 
 class Ui:
     
-    def __init__(self):
+    def __init__(self, x, y, text):
+        self.x = x
+        self.y = y
+        self.text = text
         self.font = pygame.font.Font(None, 36)
 
     def draw(self, screen):
-        text = self.font.render("Mini RPG", True, "white")
-        screen.blit(text, (10, 10))
+        text = self.font.render(self.text, True, "white")
+        screen.blit(text, (self.x, self.y))

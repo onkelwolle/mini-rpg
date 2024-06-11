@@ -2,7 +2,6 @@ import pygame
 from player import Player
 from npc import Npc
 from map import Map
-from ui import Ui
 
 class Game:
     def __init__(self):
@@ -13,7 +12,6 @@ class Game:
         self.map = Map()
         self.player = Player(64, 64)
         self.npcs = [Npc(128, 128)]
-        self.ui = Ui()
 
     def run(self):
         while self.running:
@@ -36,8 +34,7 @@ class Game:
         self.map.draw(self.screen)
         self.player.draw(self.screen)
         for npc in self.npcs:
-            npc.draw(self.screen)
-        self.ui.draw(self.screen)
+            npc.draw(self.player, self.screen)
         pygame.display.flip()
 
     def update(self):

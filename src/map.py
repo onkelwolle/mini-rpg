@@ -60,7 +60,5 @@ class Map:
             if 0 <= grid_y < len(self.map_data) and 0 <= grid_x < len(self.map_data[0]):
                 if self.map_data[grid_y][grid_x] == "#":
                     return False
-                elif self.map_data[grid_y][grid_x] == "N":
-                    return False
 
         return True

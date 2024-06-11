@@ -1,4 +1,5 @@
 import pygame
+from ui import Ui
 
 class Npc:
 
@@ -9,9 +10,12 @@ class Npc:
 
         self.image = pygame.Surface((self.width, self.height))
         self.image.fill("red")
+        self.chat_ui = Ui(10, 10, "The princess is in another castle")
 
     def update(self):
         pass
 
-    def draw(self, screen):
+    def draw(self, player, screen):
+        if self.rect.colliderect(player.rect):
+            self.chat_ui.draw(screen)
         screen.blit(self.image, self.rect.topleft)
